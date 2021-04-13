@@ -97,6 +97,13 @@ function selectButtonsInputsEtc() {
     return [...buildingUp, selectElements];
   },
   []);
+  console.log("Array of anchor, button and input elements");
+  console.log(arrOfElements);
+  var anchorElements = arrOfElements[0];
+  anchorElements.forEach(function printInnerText(eachLink) {
+    console.dir(eachLink);
+    console.log(`this is the element innerText: ${eachLink.innerText}`);
+  });
 }
 
 /***** select button, inputs, <a> tags *****/
