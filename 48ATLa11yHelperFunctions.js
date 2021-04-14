@@ -70,7 +70,7 @@ allELementsOfBodyEle.forEach(function findFontSize(eachElement) {
   );
 
   if (fontSizeOfElement < 16) {
-    console.dir(fontSizeOfElement);
+    console.log(fontSizeOfElement);
   }
 });
 
@@ -85,7 +85,7 @@ allParagraphs.forEach(function printFont(eachPara) {
 /***** select button, inputs, <a> tags *****/
 
 function selectButtonsInputsEtc() {
-  var arrOfFocusable = ["A", "BUTTON", "INPUT"];
+  var arrOfFocusable = ["A", "BUTTON", "INPUT", "LABEL"];
 
   var arrOfElements = arrOfFocusable.reduce(function findElements(
     buildingUp,
