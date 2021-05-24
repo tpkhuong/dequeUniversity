@@ -103,6 +103,7 @@ function selectButtonsInputsEtc() {
   anchorElements.forEach(function printInnerText(eachLink) {
     console.dir(eachLink);
     console.log(`this is the element innerText: ${eachLink.innerText}`);
+    console.log(`this is the element href:`, eachLink.attributes["href"]);
   });
 }
 
