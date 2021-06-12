@@ -1,4 +1,5 @@
 /***** check img alt text *****/
+/***** 2A,2B,2C *****/
 var imgArr = Array.from(document.querySelectorAll("img"));
 console.log(imgArr);
 console.log(`this is the array of imgs: ${imgArr}`);
@@ -15,7 +16,7 @@ imgArr.forEach(function printAltText(eachImg) {
 /***** check img alt text *****/
 
 /***** select all element in the body to check fontsize *****/
-
+/***** 3C *****/
 function findParaElements(classOrIdOfMainElement) {
   var allParagraph = Array.from(
     document.querySelectorAll(`#${classOrIdOfMainElement} p`)
@@ -27,8 +28,8 @@ function findParaElements(classOrIdOfMainElement) {
   console.log(`#${classOrIdOfMainElement} p`);
 }
 
-/***** get headingss *****/
-
+/***** get headings *****/
+/***** 4A,4B,4C *****/
 function getAllHeadings() {
   var resultArr = [];
 
@@ -83,7 +84,7 @@ allParagraphs.forEach(function printFont(eachPara) {
 /***** select all element in the body to check fontsize *****/
 
 /***** select button, inputs, <a> tags *****/
-
+/***** 3B,4F,6A,6B *****/
 function selectButtonsInputsEtc() {
   var arrOfFocusable = ["A", "BUTTON", "INPUT", "LABEL"];
 
