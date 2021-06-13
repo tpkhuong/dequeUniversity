@@ -5,11 +5,14 @@ console.log(imgArr);
 console.log(`this is the array of imgs: ${imgArr}`);
 imgArr.forEach(function printAltText(eachImg) {
   // console.dir(eachImg);
+  console.log(`this is img attr:`);
+  console.log(eachImg.attributes);
   if (eachImg.alt === "") {
-    console.dir(`this is empty alt text: ${eachImg}`);
+    console.log(`this is empty alt text: ${eachImg}`);
+    console.log(eachImg);
   } else {
     console.log(`this has alt text: ${eachImg.alt}`);
-    console.dir(eachImg);
+    console.log(eachImg);
   }
 });
 
@@ -85,8 +88,9 @@ allParagraphs.forEach(function printFont(eachPara) {
 
 /***** select button, inputs, <a> tags *****/
 /***** 3B,4F,6A,6B *****/
-function selectButtonsInputsEtc() {
-  var arrOfFocusable = ["A", "BUTTON", "INPUT", "LABEL"];
+/***** when we call selectButtonInputsEtc pass in one of these str: "link","btn","input","label" *****/
+function selectButtonsInputsEtc(strInput) {
+  var arrOfFocusable = ["A", "BUTTON", "INPUT", "LABEL", "VIDEO"];
 
   var arrOfElements = arrOfFocusable.reduce(function findElements(
     buildingUp,
@@ -100,12 +104,62 @@ function selectButtonsInputsEtc() {
   []);
   console.log("Array of anchor, button and input elements");
   console.log(arrOfElements);
-  var anchorElements = arrOfElements[0];
+  // var anchorElements = arrOfElements[0];
+  // anchorElements.forEach(function printInnerText(eachLink) {
+  //   console.dir(eachLink);
+  //   console.log(`this is the element innerText: ${eachLink.innerText}`);
+  //   console.log(`this is the element href:`, eachLink.attributes["href"]);
+  // });
+  switch (strInput) {
+    case "link":
+      anchorTagAttributes(arrOfElements);
+      break;
+    case "btn":
+      buttonTagAttributes(arrOfElements);
+      break;
+    case "input":
+      inputTagAttributes(arrOfElements);
+      break;
+    case "label":
+      labelTagAttributes(arrOfElements);
+      break;
+  }
+}
+
+function anchorTagAttributes(arrInput) {
+  var anchorArr = arrInput[0];
+  for (let element of anchorArr) {
+    console.log(`element attributes`);
+    console.log(element.attributes);
+  }
+  var anchorElements = arrInput[0];
   anchorElements.forEach(function printInnerText(eachLink) {
     console.dir(eachLink);
     console.log(`this is the element innerText: ${eachLink.innerText}`);
     console.log(`this is the element href:`, eachLink.attributes["href"]);
   });
+}
+function buttonTagAttributes(arrInput) {
+  var btnArr = arrInput[1];
+  for (let index = 0; index < btnArr.length; index++) {
+    let element = btnArr[index];
+    console.log(`element attributes`);
+    console.log(element.attributes);
+  }
+}
+function inputTagAttributes(arrInput) {
+  var inputArr = arrInput[2];
+  inputArr.forEach(function printAttr(element) {
+    console.log(`element attributes`);
+    console.log(element.attributes);
+  });
+}
+function labelTagAttributes(arrInput) {
+  var labelArr = arrInput[3];
+  for (let element of labelArr) {
+    console.log(`element attributes`);
+    console.log(element.attributes);
+  }
 }
 
 /***** select button, inputs, <a> tags *****/
