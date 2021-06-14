@@ -163,3 +163,56 @@ function labelTagAttributes(arrInput) {
 }
 
 /***** select button, inputs, <a> tags *****/
+
+/***** select all sections *****/
+
+function selectAllSections() {
+  var arrOfSectionsEle = Array.from(document.querySelectorAll("section"));
+  // var arrOfSectionsEle = Array.prototype.slice.call(
+  //   document.querySelectorAll("section")
+  // );
+
+  return arrOfSectionsEle;
+}
+
+/***** select all sections *****/
+
+/***** select all articles *****/
+
+function selectAllArticles() {
+  var arrOfArticleEle = Array.from(document.querySelectorAll("article"));
+  var arrOfArticleEle = Array.prototype.slice.call(
+    document.querySelectorAll("article")
+  );
+
+  return arrOfArticleEle;
+}
+
+/***** select all articles *****/
+
+/***** select all articles and sections *****/
+
+function selectAllArticlesAndSectionsEle() {
+  var arrOfStr = ["SELECT", "ARTICLE"];
+
+  var arrOfSelectAndArticleEle = arrOfStr.reduce(function findArticleAndSection(
+    buildingUp,
+    currentValue
+  ) {
+    // var convertToArr = Array.from(document.querySelectorAll(`${currentValue}`));
+    var convertToArr = Array.prototype.slice.call(
+      document.querySelectorAll(`${currentValue}`)
+    );
+
+    buildingUp.push(convertToArr);
+    // return buildingUp;
+    // buildingUp = [...buildingUp, convertToArr];
+    // return [...buildingUp, convertToArr];
+    return buildingUp;
+  },
+  []);
+
+  console.log(arrOfSelectAndArticleEle);
+}
+
+/***** select all articles and sections *****/
