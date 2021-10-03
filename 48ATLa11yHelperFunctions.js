@@ -96,9 +96,17 @@ function selectButtonsInputsEtc(strInput) {
     buildingUp,
     currentValue
   ) {
+    // selectElements is an array
     var selectElements = Array.from(
       document.querySelectorAll(`${currentValue}`)
     );
+    var selectElements = Array.prototype.slice.call(
+      document.querySelectorAll(`${currentValue}`)
+    );
+    //[...[], [1,2,3,4]] first iteration
+    //[...[[1,2,3,4]], [5,6,7,8]] second iteration
+    //[...[[1,2,3,4],[5,6,7,8]], [9,10,11,12]]
+    //building up will be [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
     return [...buildingUp, selectElements];
   },
   []);
@@ -125,6 +133,8 @@ function selectButtonsInputsEtc(strInput) {
       break;
   }
 }
+
+//make above function Big(0) better than its current Big(0)
 
 function anchorTagAttributes(arrInput) {
   var anchorArr = arrInput[0];
