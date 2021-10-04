@@ -136,6 +136,57 @@ function selectButtonsInputsEtc(strInput) {
 
 //make above function Big(0) better than its current Big(0)
 
+function anotherApproachSelectButtonsInputsEtc() {
+  var arrOfSubarraysOfTagElements = [];
+
+  var arrOfFocusable = ["A", "BUTTON", "INPUT", "LABEL", "VIDEO"];
+
+  //for each
+  // arrOfFocusable.forEach(function addArrOfElementsToResultArr(eachStr) {
+  //   const arrOfElementsAddToResultArr = Array.from(
+  //     document.querySelectorAll(`${eachStr}`)
+  //   );
+  //   const arrOfElementsAddToResultArr = Array.prototype.slice.call(
+  //     document.querySelectorAll(`${eachStr}`)
+  //   );
+
+  //   arrOfSubarraysOfTagElements.push(arrOfElementsAddToResultArr);
+  // });
+
+  // for of
+  for (let eachStr of arrOfFocusable) {
+    let arrOfElementsAddToResultArr = Array.from(
+      document.querySelectorAll(`${eachStr}`)
+    );
+    // let arrOfElementsAddToResultArr = Array.prototype.slice.call(
+    //   document.querySelectorAll(`${eachStr}`)
+    // );
+
+    arrOfSubarraysOfTagElements.push(arrOfElementsAddToResultArr);
+  }
+
+  //for loop
+
+  // for (let index = 0; index < arrOfFocusable.length; index++) {
+  //   //value of array each str
+  //   let element = arrOfFocusable[index];
+
+  //   //find all element based on str in array
+
+  //   let arrOfElementsAddToResultArr = Array.from(
+  //     document.querySelectorAll(`${element}`)
+  //   );
+  //   let arrOfElementsAddToResultArr = Array.prototype.slice.call(
+  //     document.querySelectorAll(`${element}`)
+  //   );
+
+  //   //add array to arrOfSubarraysOfTagElements
+  //   arrOfSubarraysOfTagElements.push(arrOfElementsAddToResultArr);
+  // }
+
+  console.log(arrOfSubarraysOfTagElements);
+}
+
 function anchorTagAttributes(arrInput) {
   var anchorArr = arrInput[0];
   for (let element of anchorArr) {
